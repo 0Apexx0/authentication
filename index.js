@@ -1,5 +1,5 @@
 const express = require('express');
-port = 7000;
+port = process.env.PORT || 7000;
 const app = express();
 const cookieParser = require('cookie-parser');
 const expressLayout  = require('express-ejs-layouts');
