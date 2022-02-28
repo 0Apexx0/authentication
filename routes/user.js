@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controller/userController');
 const passport = require('passport');
-
+const heroku = "https://authentication-system-1.herokuapp.com/auth/google/callback" || "/auth/google/callback" ;
 
 // create user into the DB
 router.post('/create' , userController.create );
@@ -27,7 +27,7 @@ router.get('/home', userController.home );
 
 // google sign in  using passport oauth
 router.get('/auth/google', passport.authenticate('google', {scope: ['profile' , 'email']}));
-router.get('/auth/google/callback' , passport.authenticate('google' , {failureRedirect: '/user/sign-in'}), userController.createSession);
+router.get( heroku , passport.authenticate('google' , {failureRedirect: '/user/sign-in'}), userController.createSession);
 
 
 module.exports = router;
