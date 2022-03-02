@@ -21,3 +21,7 @@ An authentication system that help to create a secure login and sign-up auth.
 - open terminal and write this command one by one
 - npm install
 - npm start
+
+## note 
+- to use google auth you have to change it with your auth credientials 
+- for use it locally change callbackurl in passport-google-strategy
