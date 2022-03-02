@@ -9,6 +9,9 @@ passport.use(new googleStrategy({
         clientID : "722929667649-d7eu7qsap8i0ghh5016i1nilfuej2tou.apps.googleusercontent.com",
         clientSecret : "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",
         callbackURL : "http://authentication-system-1.herokuapp.com/user/auth/google/callback"
+        // to use it locally uncommect the below line and comment the above line
+        // callbackURL : "http://localhost:7000/user/auth/google/callback"
+
     },
 
     function(accessToken, refreshToken, profile, done){
